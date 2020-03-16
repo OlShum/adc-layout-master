@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Энциклопедия', articles_path %>
+<%= link_to 'Проекты', projects_path %>
+<%#= link_to 'О нас', about_path %>
+<%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
+
+<h1>Энциклопедия</h1>
+
+<% @articles.each do |article| %>
+
+<div class="">
+  <%= article.type %>
+  <%= article.head %>
+  <%= image_tag article.cover.url || "", width: 200 %>
+  <%= image_tag article.squarecover.url || "", width: 100%>
+  <%= link_to 'Show', article %>
+  <%= link_to 'Edit', edit_article_path(article) %>
+</div>
+
+<% end %>
+<br>

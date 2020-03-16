@@ -1,0 +1,27 @@
+<%= form_with(model: cooperation, local: true) do |form| %>
+  <% if cooperation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cooperation.errors.count, "error") %> prohibited this cooperation from being saved:</h2>
+
+      <ul>
+        <% cooperation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

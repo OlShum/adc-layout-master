@@ -1,0 +1,8 @@
+<%= project.type %>
+<%= project.head %>
+<%= project.tag %>
+<%= image_tag project.cover.url, width: 200 %>
+<%= image_tag project.squarecover.url, width: 100 %>
+<%= link_to 'Show', project %>
+<%= link_to 'Edit', edit_project_path(project) %>
+<%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
