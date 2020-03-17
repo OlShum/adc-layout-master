@@ -1,3 +1,3 @@
 class Project < Page
-  # validates :cover, :squarecover, presence: true
+  validates :cover, :squarecover, presence: true
 end

@@ -2,7 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, :all
+    user ||= User.new
+    cannot :read, :all
 
     if user.admin?  # additional permissions for administrators
       can :manage, :all

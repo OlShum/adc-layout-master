@@ -16,8 +16,9 @@
   <%= image_tag project.cover.url, width: 200 %>
   <%= image_tag project.squarecover.url, width: 100 %>
   <%= link_to 'Show', project %>
-  <%= link_to 'Edit', edit_page_path(project) %>
-  <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user && current_user.admin? %>
+    <%= link_to 'Edit', edit_page_path(project) %>
+  <% end %>
 </div>
 
 <% end %>

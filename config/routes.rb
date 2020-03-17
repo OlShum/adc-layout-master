@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :cooperations, except: :edit
-  resources :pages
+  resources :pages, except: :new
   resources :articles
   resources :projects
   resources :about

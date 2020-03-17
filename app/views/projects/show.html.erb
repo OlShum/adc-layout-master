@@ -1,34 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Head:</strong>
+  <!-- <strong>Head:</strong> -->
   <%= @project.head %>
 </p>
 
 <p>
-  <strong>Lead:</strong>
+  <!-- <strong>Lead:</strong> -->
   <%= @project.lead %>
 </p>
 
 <p>
-  <strong>Tag:</strong>
+  <!-- <strong>Tag:</strong> -->
   <%= @project.tag %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Авторы:</strong>
   <%= @project.author %>
 </p>
 
 <p>
-  <strong>Cover:</strong>
+  <!-- <strong>Cover:</strong> -->
   <%= image_tag @project.cover.url %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <!-- <strong>Description:</strong> -->
   <%= @project.description %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+
 <%= link_to 'Back', pages_path %>

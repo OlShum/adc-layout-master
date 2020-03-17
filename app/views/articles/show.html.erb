@@ -1,29 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Head:</strong>
+  <!-- <strong>Head:</strong> -->
   <%= @article.head %>
 </p>
 
 <p>
-  <strong>Lead:</strong>
+  <!-- <strong>Lead:</strong> -->
   <%= @article.lead %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Авторы:</strong>
   <%= @article.author %>
 </p>
 
 <p>
-  <strong>Cover:</strong>
-  <%= image_tag @article.cover.url || "" %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+  <!-- <strong>Description:</strong> -->
   <%= @article.description %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+<% end %>
+
 <%= link_to 'Back', pages_path %>

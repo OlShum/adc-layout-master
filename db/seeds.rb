@@ -7,7 +7,7 @@
     author: 'Прокофьева Татьяна, Мартынова Софья, Зяббарова Лолита',
     cover: 'meta.jpg',
     description: 'Все началось с коллективного брейнсторма на одной из первых пар по креативному проектированию на втором курсе. Вариантов было очень много, но как только мы погружались в них глубже, каждый раз оказывалось, что в целом у них уже были неплохие решения. <br> Очередной велосипед придумывать не хотелось, и тогда мы решили представить, о чем обычно не думают, в диджитал контексте. И тогда в голову стали приходить мысли об экзистенциальом, в часности пришло Завещание.',
-    squarecover: 'meta.jpg'
+    squarecover: 'Lol.png'
   },
   {
     type: 'Article',
@@ -17,7 +17,7 @@
     author: 'Прокофьева Татьяна, Мартынова Софья, Зяббарова Лолита',
     cover: 'meta.jpg',
     description: 'Все началось с коллективного брейнсторма на одной из первых пар по креативному проектированию на втором курсе. Вариантов было очень много, но как только мы погружались в них глубже, каждый раз оказывалось, что в целом у них уже были неплохие решения. <br> Очередной велосипед придумывать не хотелось, и тогда мы решили представить, о чем обычно не думают, в диджитал контексте. И тогда в голову стали приходить мысли об экзистенциальом, в часности пришло Завещание.',
-    squarecover: 'images/meta.jpg'
+    squarecover: 'meta.jpg'
   }
 
 ]
@@ -46,8 +46,7 @@
 
 def seed_data
   drop_db
-  #drop_uploads
-  # create_articles
+  drop_uploads
   create_pages
   create_admin
 end
@@ -78,6 +77,8 @@ end
 
 def create_pages
   @pages.each_with_index do |page, index|
+    page[:cover] = upload_page_cover
+    page[:squarecover] = upload_page_squarecover
     p = Page.create!(page)
     puts "#{p.id}"
   end
@@ -87,6 +88,20 @@ def create_pages
   #   end
   #   puts 'YOOOOOOOOO'
   # end
+end
+
+def upload_page_cover
+  cover_uploader = CoverUploader.new(Page.new, :cover)
+  # cover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/covers/#{ @page[:cover] }"))))
+  cover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/covers/*")).sample))
+  cover_uploader
+end
+
+def upload_page_squarecover
+  squarecover_uploader = SquarecoverUploader.new(Page.new, :squarecover)
+  # squarecover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/squarecovers/#{ @page[:squarecover] }"))))
+  squarecover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/squarecovers/*")).sample))
+  squarecover_uploader
 end
 
 # def create_pages
