@@ -46,7 +46,7 @@
 
 def seed_data
   drop_db
-  drop_uploads
+  #drop_uploads
   create_pages
   create_admin
 end
