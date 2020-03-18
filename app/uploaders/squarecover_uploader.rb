@@ -29,9 +29,19 @@ class SquarecoverUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
+  version :project_preview do
+    process :resize_to_fill => [315, 315]
+  end
+
+  version :article_preview_small do
+    process :resize_to_fill => [310, 310]
+  end
+
+  version :article_preview_big do
+    process :resize_to_fill => [631, 631]
+  end
+
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

@@ -15,11 +15,11 @@
     <% def number
       number = [1, 2].sample
     end  %>
-    
+
     <% if number == 1 %>
-      <%= image_tag project.cover.url, width: 200 %>
+      <%= image_tag project.cover.url(:project_preview) %>
     <% else %>
-      <%= image_tag project.squarecover.url, width: 100 %>
+      <%= image_tag project.squarecover.url(:project_preview) %>
     <% end %>
 
     <%= project.tag %>

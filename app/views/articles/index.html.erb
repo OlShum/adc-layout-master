@@ -17,9 +17,9 @@
     end  %>
 
     <% if number == 1 %>
-      <%= image_tag article.cover.url || "", width: 300, height: 300 %>
+      <%= image_tag article.cover.url(:article_preview) %>
     <% else %>
-      <%= image_tag article.squarecover.url || "", width: 100%>
+      <%= image_tag article.squarecover.url(:article_preview_small)%>
     <% end %>
   <% end %>
 
