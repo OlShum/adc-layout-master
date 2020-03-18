@@ -11,18 +11,18 @@
 <% @articles.each do |article| %>
 
 <div class="">
-  <%= article.type %>
-  <%= article.head %>
+  <%= link_to article do %>
+    <% def number
+      number = [1, 2].sample
+    end  %>
 
-  <% def number
-    number = [1, 2].sample
-  end  %>
-  <% if number == 1 %>
-    <%= image_tag article.cover.url || "", width: 300, height: 300 %>
-  <% else %>
-    <%= image_tag article.squarecover.url || "", width: 100%>
+    <% if number == 1 %>
+      <%= image_tag article.cover.url || "", width: 300, height: 300 %>
+    <% else %>
+      <%= image_tag article.squarecover.url || "", width: 100%>
+    <% end %>
   <% end %>
-  <%= link_to 'Show', article %>
+
   <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_article_path(article) %>
   <% end %>

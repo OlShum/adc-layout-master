@@ -11,17 +11,24 @@
 <% @projects.each do |project| %>
 
 <div class="">
-  <%= project.type %>
-  <%= project.head %>
-  <%= project.tag %>
+  <%= link_to project do %>
+    <% def number
+      number = [1, 2].sample
+    end  %>
+    
+    <% if number == 1 %>
+      <%= image_tag project.cover.url, width: 200 %>
+    <% else %>
+      <%= image_tag project.squarecover.url, width: 100 %>
+    <% end %>
 
-  <% if number == 1 %>
-    <%= image_tag project.cover.url, width: 200 %>
-  <% else %>
-    <%= image_tag project.squarecover.url, width: 100 %>
+    <%= project.tag %>
+    <%= project.head %> – <%= project.lead %>
+    <%= project.author %>
   <% end %>
 
-  <%= link_to 'Show', project %>
+
+  <% link_to project %>
   <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_page_path(project) %>
   <% end %>
