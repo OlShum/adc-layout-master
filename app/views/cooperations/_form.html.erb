@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
+    <%= form.text_field :company, placeholder: 'Название компании / представителя' %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, placeholder: 'E-mail' %>
   </div>
 
+  <p class="restriction">Нажимая на кнопку «Далее», вы даете согласие <br> на обработку персональных данных</p>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'ДАЛЕЕ'%>
   </div>
 <% end %>

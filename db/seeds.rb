@@ -269,8 +269,8 @@ end
 
 def create_pages
   @pages.each_with_index do |page, index|
-    page[:cover] = upload_page_cover
-    page[:squarecover] = upload_page_squarecover
+    page[:cover] = upload_page_cover(page[:cover])
+    page[:squarecover] = upload_page_squarecover(page[:squarecover])
     p = Page.create!(page)
     puts "#{p.id}"
   end
@@ -282,17 +282,17 @@ def create_pages
   # end
 end
 
-def upload_page_cover
+def upload_page_cover(filename)
   cover_uploader = CoverUploader.new(Page.new, :cover)
-  # cover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/covers/#{ @page[:cover] }"))))
-  cover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/covers/*")).sample))
+  cover_uploader.cache!(File.open(File.join(Rails.root, "public/seed_images/covers/#{ filename }")))
+  # cover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/covers/*")).sample))
   cover_uploader
 end
 
-def upload_page_squarecover
+def upload_page_squarecover(filename)
   squarecover_uploader = SquarecoverUploader.new(Page.new, :squarecover)
-  # squarecover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/squarecovers/#{ @page[:squarecover] }"))))
-  squarecover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/squarecovers/*")).sample))
+  squarecover_uploader.cache!(File.open(File.join(Rails.root, "public/seed_images/squarecovers/#{ filename }")))
+  # squarecover_uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/seed_images/squarecovers/*")).sample))
   squarecover_uploader
 end
 

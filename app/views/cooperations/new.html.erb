@@ -4,8 +4,8 @@
 <%= link_to 'О нас', about_index_path %>
 <%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
 
-<h1>New Cooperation</h1>
-
-<%= render 'form', cooperation: @cooperation %>
-
-<%= link_to 'Back', cooperations_path %>
+<div class="form">
+  <h1>СОТРУДНИЧЕСТВО</h1>
+  <p>Заполните форму сотрудничества, чтобы мы смогли связаться с Вами и обсудить подробнее детали</p>
+  <%= render 'form', cooperation: @cooperation %>
+</div>
