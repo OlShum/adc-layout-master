@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<a href="#">Главная</a>
 <%= link_to 'Энциклопедия', articles_path %>
 <%= link_to 'Проекты', projects_path %>
-<%#= link_to 'О нас', about_path %>
+<%= link_to 'О нас', about_index_path %>
 <%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
 
 <h1>Энциклопедия</h1>
@@ -12,8 +13,15 @@
 <div class="">
   <%= article.type %>
   <%= article.head %>
-  <%= image_tag article.cover.url || "" %>
-  <%= image_tag article.squarecover.url || "", width: 100%>
+
+  <% def number
+    number = [1, 2].sample
+  end  %>
+  <% if number == 1 %>
+    <%= image_tag article.cover.url || "", width: 300, height: 300 %>
+  <% else %>
+    <%= image_tag article.squarecover.url || "", width: 100%>
+  <% end %>
   <%= link_to 'Show', article %>
   <% if current_user && current_user.admin? %>
     <%= link_to 'Edit', edit_article_path(article) %>

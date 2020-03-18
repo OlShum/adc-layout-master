@@ -13,13 +13,3 @@
  *= require_tree .
  *= require_self
  */
-body {
-  background-color: black;
-  color: white;
-}
-
-a,
-a:visited {
-  color: #79ff39;
-  text-decoration: none;
-}
