@@ -12,12 +12,10 @@
 
 <div class="">
   <%= link_to article do %>
-    <% def number
-      number = [1, 2].sample
-    end  %>
+    <% number = [1, 2].sample %>
 
     <% if number == 1 %>
-      <%= image_tag article.cover.url(:article_preview) %>
+      <%= image_tag article.cover.article_preview.url %>
     <% else %>
       <%= image_tag article.squarecover.url(:article_preview_small)%>
     <% end %>

@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+}
+
 .form {
   position: absolute;
-  left: 620px;
+  left: 43.05%;
   top: 140px;
   width: 614px;
 
