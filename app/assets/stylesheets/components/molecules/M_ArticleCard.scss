@@ -1,0 +1,34 @@
+.M_ArticleCard {
+  border-radius: 6px;
+
+  &.square {
+    // width: 100px;
+
+    .A_ArticleCardHeader {
+    }
+
+    .A_ArticleCardLead {
+      display: none;
+    }
+  }
+
+  &.wide {
+  }
+
+  &.broken {
+  }
+
+  &.whiteOnBlack {
+    color: white;
+
+    &.square {
+      // background-image: image();
+    }
+
+    &.wide {
+    }
+
+    &.broken {
+    }
+  }
+}
