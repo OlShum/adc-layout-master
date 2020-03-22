@@ -1,38 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<a href="#">Главная</a>
-<%= link_to 'Энциклопедия', articles_path %>
-<%= link_to 'Проекты', projects_path %>
-<%= link_to 'О нас', about_index_path %>
-<%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
+<!-- <a href="#">Главная</a> -->
+<%#= link_to 'Энциклопедия', articles_path %>
+<%#= link_to 'Проекты', projects_path %>
+<%#= link_to 'О нас', about_index_path %>
+<%#= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
+<div class="O_ProjectGrid">
+  <% @projects.shuffle.each do |project| %>
 
-<h1>Проекты</h1>
+  <div class="M_ProjectСard">
+    <%= link_to project do %>
+      <% number = [1, 2].sample %>
 
-<% @projects.each do |project| %>
+      <% if number == 1 %>
+        <div class="A_ProjectCover"><%= image_tag project.cover.url(:project_preview) %></div>
+      <% else %>
+        <div class="A_ProjectCover"><%= image_tag project.squarecover.url(:project_preview) %></div>
+      <% end %>
 
-<div class="">
-  <%= link_to project do %>
-    <% def number
-      number = [1, 2].sample
-    end  %>
-
-    <% if number == 1 %>
-      <%= image_tag project.cover.url(:project_preview) %>
-    <% else %>
-      <%= image_tag project.squarecover.url(:project_preview) %>
+      <div class="A_ProjectTag"><%= project.tag %></div>
+      <p class="A_ProjectHeader">
+        <% if project.previewtext.present? %>
+          <%= project.head %> – <%= project.previewtext %>
+        <% else %>
+          <%= project.head %>
+        <% end %>
+      </p>
+      <p class="A_ProjectAuthors"><%= project.author %></p>
     <% end %>
 
-    <%= project.tag %>
-    <%= project.head %> – <%= project.lead %>
-    <%= project.author %>
-  <% end %>
 
-
-  <% link_to project %>
-  <% if current_user && current_user.admin? %>
-    <%= link_to 'Edit', edit_page_path(project) %>
+    <% link_to project %>
+    <% if current_user && current_user.admin? %>
+      <%= link_to 'Edit', edit_page_path(project) %>
+    <% end %>
+  </div>
   <% end %>
 </div>
 
-<% end %>
+
+<div class="M_Footer">
+  <a href="#" class="A_FooterLink">FACEBOOK</a>
+  <a href="#" class="A_FooterLink">TWITTER</a>
+  <a href="#" class="A_FooterLink">INSTAGRAM</a>
+  <a class="A_FooterEmail">ADC@YO.RU</a>
+</div>
 <br>

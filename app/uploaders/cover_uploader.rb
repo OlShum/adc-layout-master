@@ -33,11 +33,11 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :project do
-    process :resize_to_fill => [1200, 650]
+    process :resize_to_fill => [1170, 630]
   end
 
   version :project_preview do
-    process :resize_to_fill => [315, 170]
+    process :resize_to_fill => [311, 168]
   end
 
   version :article_preview do
