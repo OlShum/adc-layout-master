@@ -4,9 +4,11 @@
 <%= link_to 'О нас', about_index_path %>
 <%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
 
-<div class="O_CooperationCompilation">
-  <h1 class="A_CooperationHead">СОТРУДНИЧЕСТВО</h1>
-  <p class="A_CooperationLead ">Заполните форму сотрудничества, чтобы мы смогли связаться с Вами и обсудить подробнее детали</p>
-  <%= render 'form', cooperation: @cooperation %>
+<div class="S_CooperationFull">
+  <div class="O_CooperationCompilation">
+    <h1 class="A_CooperationHead">СОТРУДНИЧЕСТВО</h1>
+    <p class="A_CooperationLead ">Заполните форму сотрудничества, чтобы мы смогли связаться с Вами и обсудить подробнее детали</p>
+    <%= render 'form', cooperation: @cooperation %>
+  </div>
+  <%= render 'elements/footer' %>
 </div>
-<%= render 'elements/footer' %>
