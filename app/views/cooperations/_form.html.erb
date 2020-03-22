@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="A_CooperationForm">
     <%= form.text_field :company, placeholder: 'Название компании / представителя' %>
   </div>
 
-  <div class="field">
+  <div class="A_CooperationForm">
     <%= form.text_field :email, placeholder: 'E-mail' %>
   </div>
 
-  <p class="restriction">Нажимая на кнопку «Далее», вы даете согласие <br> на обработку персональных данных</p>
+  <p class="A_CooperationNotice">Нажимая на кнопку «Далее», вы даете согласие <br> на обработку персональных данных</p>
 
-  <div class="actions">
+  <div class="A_CooperationButtonNext">
     <%= form.submit 'ДАЛЕЕ'%>
   </div>
 <% end %>
