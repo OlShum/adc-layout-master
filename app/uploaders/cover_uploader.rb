@@ -44,6 +44,18 @@ class CoverUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [634, 339]
   end
 
+  version :article_preview_quite_square do
+    process :resize_to_fill => [331, 339]
+  end
+
+  version :article_preview_big_square do
+    process :resize_to_fill => [635, 635]
+  end
+
+  version :article_preview_small_square do
+    process :resize_to_fill => [311, 311]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_whitelist

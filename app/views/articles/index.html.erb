@@ -1,31 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<a href="#">Главная</a>
-<%= link_to 'Энциклопедия', articles_path %>
-<%= link_to 'Проекты', projects_path %>
-<%= link_to 'О нас', about_index_path %>
-<%= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
+<!-- <a href="#">Главная</a> -->
+<%#= link_to 'Энциклопедия', articles_path %>
+<%#= link_to 'Проекты', projects_path %>
+<%#= link_to 'О нас', about_index_path %>
+<%#= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
 
-<h1 class="A_ArticleLayoutHeader">BROWSE THE NWT AND GET RESULTS</h1>
-<p class="A_ArticleLayoutText">Being a catalyst for innovation, exploring new sustainable solutions or developing a new brand. Below you find a selection of work which manifest our philosophy Simplify to Clarify.</p>
+<div class="S_ArticleCompilation">
+  <div class="M_ProjectLayoutHT">
+    <h1 class="A_ArticleLayoutHeader">BROWSE THE NET AND GET RESULTS</h1>
+    <p class="A_ArticleLayoutText">Being a catalyst for innovation, exploring new sustainable solutions or developing a new brand. Below you find a selection of work which manifest our philosophy Simplify to Clarify.</p>
+  </div>
 
-<% @articles.each do |article| %>
+  <div class="O_ArticleGrid">
+    <% @articles.each do |article| %>
 
-<div class="">
-  <%= link_to article do %>
-    <% number = [1, 2].sample %>
+    <div class="">
+      <%= link_to article do %>
+        <% number = [1, 2].sample %>
 
-    <% if number == 1 %>
-      <%= image_tag article.cover.article_preview.url %>
-    <% else %>
-      <%= image_tag article.squarecover.url(:article_preview_small)%>
-    <% end %>
-  <% end %>
+        <% if number == 1 %>
+          <%= image_tag article.cover.article_preview.url %>
+        <% else %>
+          <%= image_tag article.squarecover.url%>
+        <% end %>
+      <% end %>
 
-  <% if current_user && current_user.admin? %>
-    <%= link_to 'Edit', edit_article_path(article) %>
-  <% end %>
-</div>
+      <% if current_user && current_user.admin? %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+      <% end %>
+    </div>
 
-<% end %>
-<br>
+    <% end %></div>
+  <br>
+
+  <%= render 'elements/footer' %>
+  </div>
