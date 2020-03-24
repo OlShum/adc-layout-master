@@ -6,6 +6,8 @@
 <%#= link_to 'О нас', about_index_path %>
 <%#= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
 
+<%= render 'elements/menu' %>
+
 <div class="S_ArticleCompilation">
   <div class="M_ProjectLayoutHT">
     <h1 class="A_ArticleLayoutHeader">BROWSE THE NET AND GET RESULTS</h1>
@@ -17,17 +19,27 @@
 
     <div class="">
       <%= link_to article do %>
-        <% number = [1, 2].sample %>
 
-        <% if number == 1 %>
-          <%= image_tag article.cover.article_preview.url %>
-        <% else %>
-          <%= image_tag article.squarecover.url%>
+      <div class="M_ArticleCard">
+        <div class="A_ArticleCover">
+          <% if article.cover.present? %>
+          <div class="wide">
+            <p class="A_ArticleHeader"><%= article.head %></p>
+            <p class="A_ArticleLead"><%= article.lead %></p>
+              <%= image_tag article.cover.article_preview.url %>
+          </div>
+          <% else %>
+          <div class="square">
+            <p class="A_ArticleHeader"><%= article.head %></p>
+              <%= image_tag article.squarecover.article_preview_quite_square .url%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+        <% if current_user && current_user.admin? %>
+          <%= link_to 'Edit', edit_article_path(article) %>
         <% end %>
-      <% end %>
-
-      <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit', edit_article_path(article) %>
       <% end %>
     </div>
 

@@ -1,2 +1,24 @@
-.A_MenuTag.scss {
+.A_MenuTag {
+  margin-bottom: 20px;
+  margin-left: 70px;
+  padding: 5px 15px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 23px;
+  height: 35px;
+  border: solid;
+  border-radius: 100px;
+  border-width: 1px;
+  border-color: white;
+  width: fit-content;
+  background-color: black;
+}
+
+.A_MenuTag:hover {
+  background-color: #79ff39;
+  border-color: black;
+
+  a {
+    color: black;
+  }
 }

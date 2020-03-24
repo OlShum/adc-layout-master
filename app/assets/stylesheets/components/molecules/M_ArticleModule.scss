@@ -1,0 +1,59 @@
+.M_ArticleModule {
+  width: 745px;
+  height: auto;
+  display: block;
+
+  .A_ArticleMiddleParagraph {
+    font-family: PT Root UI;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 110%;
+    /* identical to box height, or 42px */
+    height: auto;
+    width: auto;
+
+    color: #ffffff;
+  }
+
+  .A_ArticleHeader {
+    position: relative;
+    font-family: ADC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 53px;
+    line-height: 130%;
+    /* or 69px */
+    height: auto;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+
+  .A_ArticleParagraph {
+    position: relative;
+    font-family: PT Root UI;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 27px;
+    line-height: 135%;
+    /* or 36px */
+    height: auto;
+    width: auto;
+
+    color: #ffffff;
+  }
+}
+
+#ninetyPX {
+  margin-top: 90px !important;
+}
+
+#right_M_ArticleModule {
+  float: right;
+}
+
+#left_M_ArticleModule {
+  float: left;
+}

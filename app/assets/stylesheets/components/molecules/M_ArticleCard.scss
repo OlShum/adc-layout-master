@@ -1,18 +1,44 @@
 .M_ArticleCard {
-  border-radius: 6px;
+  margin-bottom: 12px;
+  margin-right: 12px;
 
-  &.square {
-    // width: 100px;
+  .A_ArticleHeader {
+    position: absolute;
+  }
 
-    .A_ArticleCardHeader {
+  .A_ArticleLead {
+    position: absolute;
+  }
+
+  .square {
+    .A_ArticleHeader {
+      margin-top: 210px;
+      font-size: 25px;
+      width: 260px;
     }
 
-    .A_ArticleCardLead {
+    .A_ArticleLead {
       display: none;
     }
   }
 
-  &.wide {
+  .wide {
+    .A_ArticleHeader {
+      line-height: 70px;
+      margin-top: 110px;
+      margin-left: 39px;
+      font-size: 44px;
+      width: 520px;
+    }
+
+    .A_ArticleLead {
+      line-height: 28px;
+      width: 440px;
+      margin-top: 247px;
+      margin-left: 35px;
+      position: absolute;
+      font-size: 24px;
+    }
   }
 
   &.broken {

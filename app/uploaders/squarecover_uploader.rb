@@ -33,15 +33,9 @@ class SquarecoverUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [315, 315]
   end
 
-  version :article_preview_small do
-    process :resize_to_fill => [311, 311]
+  version :article_preview_quite_square do
+    process :resize_to_fill => [311, 339]
   end
-
-  version :article_preview_big do
-    process :resize_to_fill => [631, 631]
-  end
-
-
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

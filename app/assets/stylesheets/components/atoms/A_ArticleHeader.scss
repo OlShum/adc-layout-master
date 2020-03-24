@@ -1,0 +1,21 @@
+.A_ArticleHeader {
+  display: flex;
+  position: relative;
+  width: auto;
+  height: auto;
+
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 160px;
+
+  font-family: "ADC-Semi-Bold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 160%;
+  /* or 154px */
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}

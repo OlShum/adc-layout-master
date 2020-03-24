@@ -1,2 +1,6 @@
 .M_MenuBar {
+  display: hidden;
+}
+.M_MenuBar:hover {
+  display: block;
 }

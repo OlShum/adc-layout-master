@@ -1,40 +1,42 @@
-<p id="notice"><%= notice %></p>
 
 <!-- <a href="#">Главная</a> -->
 <%#= link_to 'Энциклопедия', articles_path %>
 <%#= link_to 'Проекты', projects_path %>
 <%#= link_to 'О нас', about_index_path %>
 <%#= link_to 'Сотрудничество', new_cooperation_path(@cooperation) %>
+
+<%= render 'elements/menu' %>
+
 <div class="O_ProjectGrid">
   <% @projects.shuffle.each do |project| %>
 
-  <div class="M_ProjectСard">
-    <%= link_to project do %>
-      <% number = [1, 2].sample %>
+    <div class="M_ProjectСard">
+      <%= link_to project do %>
+        <% number = [1, 2].sample %>
 
-      <% if number == 1 %>
-        <div class="A_ProjectCover"><%= image_tag project.cover.url(:project_preview) %></div>
-      <% else %>
-        <div class="A_ProjectCover"><%= image_tag project.squarecover.url(:project_preview) %></div>
+        <% if number == 1 %>
+          <div class="A_ProjectCover"><%= image_tag project.cover.url(:project_preview) %></div>
+        <% else %>
+          <div class="A_ProjectCover"><%= image_tag project.squarecover.url(:project_preview) %></div>
+        <% end %>
+
+        <div class="A_ProjectTag"><%= project.tag %></div>
+        <p class="A_ProjectHeader">
+          <% if project.previewtext.present? %>
+            <%= project.head %> – <%= project.previewtext %>
+          <% else %>
+            <%= project.head %>
+          <% end %>
+        </p>
+        <p class="A_ProjectAuthors"><%= project.author %></p>
       <% end %>
 
-      <div class="A_ProjectTag"><%= project.tag %></div>
-      <p class="A_ProjectHeader">
-        <% if project.previewtext.present? %>
-          <%= project.head %> – <%= project.previewtext %>
-        <% else %>
-          <%= project.head %>
-        <% end %>
-      </p>
-      <p class="A_ProjectAuthors"><%= project.author %></p>
-    <% end %>
 
-
-    <% link_to project %>
-    <% if current_user && current_user.admin? %>
-      <%= link_to 'Edit', edit_page_path(project) %>
-    <% end %>
-  </div>
+      <% link_to project %>
+      <% if current_user && current_user.admin? %>
+        <%= link_to 'Edit', edit_page_path(project) %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

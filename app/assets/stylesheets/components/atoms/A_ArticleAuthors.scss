@@ -1,0 +1,28 @@
+.A_ArticleAuthors {
+  position: relative;
+  display: flex;
+  width: 430px;
+  height: auto;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  #opacity {
+    opacity: 70%;
+  }
+
+  #green {
+    color: #79ff39;
+  }
+}
+
+.A_ArticleAuthors p {
+  font-family: PT Root UI;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px !important;
+  line-height: 135%;
+  /* or 28px */
+
+  color: #ffffff;
+}

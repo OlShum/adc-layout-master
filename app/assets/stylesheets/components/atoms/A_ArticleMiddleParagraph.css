@@ -1,0 +1,9 @@
+.A_ArticleMiddleParagraph {
+  position: relative;
+  display: flex;
+  width: 720px;
+  height: auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 60px;
+}

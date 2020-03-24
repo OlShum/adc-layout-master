@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_195050) do
+ActiveRecord::Schema.define(version: 2020_03_24_152411) do
 
   create_table "add_squarecover_to_pages", force: :cascade do |t|
     t.string "squarecover"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_195050) do
     t.string "squarecover"
     t.integer "user_id"
     t.string "previewtext"
+    t.string "partial_name"
     t.index ["user_id"], name: "index_pages_on_user_id"
   end
 

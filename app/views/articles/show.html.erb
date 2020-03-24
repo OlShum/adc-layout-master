@@ -1,27 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <!-- <strong>Head:</strong> -->
-  <%= @article.head %>
-</p>
-
-<p>
-  <!-- <strong>Lead:</strong> -->
-  <%= @article.lead %>
-</p>
-
-<p>
-  <strong>Авторы:</strong>
-  <%= @article.author %>
-</p>
-
-<p>
-  <!-- <strong>Description:</strong> -->
-  <%= @article.description %>
-</p>
-
 <% if current_user && current_user.admin? %>
   <%= link_to 'Edit', edit_article_path(@article) %> |
 <% end %>
 
-<%= link_to 'Back', pages_path %>
+<%= render 'elements/menu' %>
+
+<div class="O_ArticleCompilation">
+
+  <div class="M_ArticleOpening">
+
+    <h1 class="A_ArticleHeader"><%= @article.head %></h1>
+
+    <div class="A_ArticleAuthors">
+      <p>
+        <span id="opacity" ">Авторы:</span>
+        <span id="green"><%= @article.author %></span>
+        <br><br>
+        Школа дизайна НИУ ВШЭ x Hæd Exchange Кафедра «Дизайн и программирование»</p>
+    </div>
+
+    <div class="A_ArticleParagraph">
+      <%= @article.description %>
+    </div>
+    <!-- <div class="A_ArticleParagraph">
+      Вы читаете статью об одной из применяемых мной техник для организации своей работы и жизни. Я считаю, чем проще методология, тем проще её применять и адаптировать под себя.
+    </div>
+    <div class="A_ArticleParagraph">
+      Подобно учёным исследующим законы природы, некоторые люди, занимающиеся организационной работой, смотрят на процессы происходящие в жизни и формализуют их. Такие методики можно назвать нативными (естественными, которые взяты из жизни).
+    </div> -->
+
+    <%= render "articletext/second" %>
+
+  </div>
+
+  <%= render 'elements/footer' %>
+      </div>
+
+    </div>

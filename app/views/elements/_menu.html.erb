@@ -1,0 +1,13 @@
+<div class="O_Menu">
+  <%= image_tag("A_DipFace.png", :alt => "rss feed", class: "A_DipFace") %>
+
+  <div class="M_MenuBar">
+    <ul>
+      <li class="A_MenuTag"><a href="#">ГЛАВНАЯ</a></li>
+      <li class="A_MenuTag"><%= link_to 'ЭНЦИКЛОПЕДИЯ', articles_path %></li>
+      <li class="A_MenuTag"><%= link_to 'ПРОЕКТЫ', projects_path %></li>
+      <li class="A_MenuTag"><%= link_to 'О НАС', about_index_path %></li>
+      <li class="A_MenuTag"><%= link_to 'СОТРУДНИЧЕСТВО', new_cooperation_path(@cooperation) %></li>
+    </ul>
+  </div>
+</div>

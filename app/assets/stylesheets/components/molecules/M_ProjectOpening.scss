@@ -1,0 +1,111 @@
+.M_ProjectOpening {
+  // position: relative;
+  display: block;
+  width: 1280px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 80px;
+
+  img {
+    border-radius: 10px;
+  }
+
+  .A_ProjectAuthors {
+    position: relative;
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    font-family: PT Root UI;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 135%;
+    /* or 28px */
+
+    color: #ffffff;
+
+    #opacity {
+      opacity: 70%;
+    }
+
+    #green {
+      color: #79ff39;
+    }
+  }
+
+  .A_ProjectHeader {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 160px;
+
+    font-family: ADC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 160%;
+    /* or 154px */
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+
+  .A_ProjectHeader2 {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 160px;
+
+    font-family: ADC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 53px;
+    line-height: 160%;
+    /* or 154px */
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+
+  .A_ProjectTag {
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 50px;
+    width: 172px;
+    height: 35px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 25px;
+
+    color: #ffffff;
+
+    text-align: center;
+    padding: 5px;
+    margin-right: 25px;
+    margin-top: -5px;
+  }
+}
+
+#right_M_ArticleModule {
+  float: right;
+}
+
+#left_M_ArticleModule {
+  float: left;
+}

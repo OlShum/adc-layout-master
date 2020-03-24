@@ -1,0 +1,31 @@
+.A_ProjectParagraph {
+  position: relative;
+  display: flex;
+  width: 720px;
+  height: auto;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  font-family: PT Root UI;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 135%;
+  /* or 28px */
+
+  color: #ffffff;
+}
+
+#right_M_ProjectModule {
+  float: right;
+}
+
+#left_M_ProjectModule {
+  float: left;
+}
+
+#right_M_S_ProjectModule {
+  float: right;
+  margin-top: 340px;
+}

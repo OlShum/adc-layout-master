@@ -1,37 +1,69 @@
-<p id="notice"><%= notice %></p>
+<%= render 'elements/menu' %>
 
-<p>
-  <!-- <strong>Head:</strong> -->
-  <%= @project.head %>
-</p>
+<div class="O_ProjectCompilation">
 
-<p>
-  <!-- <strong>Lead:</strong> -->
-  <%= @project.lead %>
-</p>
+  <div class="M_ProjectOpening">
 
-<p>
-  <!-- <strong>Tag:</strong> -->
-  <%= @project.tag %>
-</p>
+    <h1 class="A_ProjectHeader"><%= @project.head %></h1>
 
-<p>
-  <strong>Авторы:</strong>
-  <%= @project.author %>
-</p>
+    <h2 class="A_ProjectLead"><%= @project.lead %></h2>
 
-<p>
-  <!-- <strong>Cover:</strong> -->
-  <%= image_tag @project.cover.url(:project) %>
-</p>
+    <div class="A_ProjectAuthors">
+      <div class="A_ProjectTag">
+        <%= @project.tag %>
+      </div>
+      <p>
+        <span id="opacity" ">Авторы:</span>
+        <span id="green"><%= @project.author %></span>
+      </p>
+    </div>
 
-<p>
-  <!-- <strong>Description:</strong> -->
-  <%= @project.description %>
-</p>
+    <div class="A_ProjectImage" id="image"> <%= image_tag @project.cover.url(:project) %></div>
 
-<% if current_user && current_user.admin? %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-<% end %>
+    <p class="A_ProjectParagraph" id="right_M_ProjectModule">
+    <%= @project.description %>
+    </p>
+    <!-- <p class="A_ProjectParagraph" id="right_M_ProjectModule">
+      Очередной велосипед придумывать не хотелось, и тогда мы решили представить, о чем обычно не думают, в диджитал контексте. И тогда в голову стали приходить мысли об экзистенциальом, в часности пришло Завещание.
+    </p> -->
 
-<%= link_to 'Back', pages_path %>
+  </div>
+
+  <%= render "articletext/third" %>
+
+<div class="O_ProjectLinkFooter">
+<div class="A_ProjectButtonBlock">
+  <a class="A_ProjectButton">
+    SHARE
+  </a>
+</div>
+  <div class="A_ProjectParagraph">
+    ЧТО ДАЛЬШЕ?
+  </div>
+  <div class="M_ProjectHyperLink">
+    <%= image_tag @project.cover.url(:project_footer_preview) %>
+    <div class="A_ProjectTag"><%= @project.tag %></div>
+    <div class="A_ProjectHeader">
+      <% if @project.previewtext.present? %>
+          <%= @project.head %> – <%= @project.previewtext %>
+      <% else %>
+          <%= project.head %>
+      <% end %>
+    </div>
+    <div class="A_ProjectAuthors"><%= @project.author %></div>
+  </div>
+  <div class="M_ProjectHyperLink">
+      <%= image_tag @project.cover.url(:project_footer_preview) %>
+      <div class="A_ProjectTag"><%= @project.tag %></div>
+      <div class="A_ProjectHeader">
+        <% if @project.previewtext.present? %>
+            <%= @project.head %> – <%= @project.previewtext %>
+        <% else %>
+            <%= @project.head %>
+        <% end %>
+      </div>
+    <div class="A_ProjectAuthors"><%= @project.author %></div>
+  </div>
+</div>
+
+<%= render 'elements/footer' %>
