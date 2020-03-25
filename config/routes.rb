@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'about/index'
+  get 'plug/index'
   devise_for :users
   resources :cooperations, except: :edit
   resources :pages, except: :new

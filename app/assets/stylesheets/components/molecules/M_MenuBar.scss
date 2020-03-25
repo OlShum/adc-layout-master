@@ -1,6 +1,7 @@
 .M_MenuBar {
-  display: hidden;
+  display: none;
 }
-.M_MenuBar:hover {
+
+.open {
   display: block;
 }
