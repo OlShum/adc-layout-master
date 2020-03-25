@@ -1,4 +1,5 @@
 <%= render 'elements/menu' %>
+<%= render 'elements/calendar' %>
 
 <div class="O_ProjectCompilation">
 
@@ -47,7 +48,7 @@
       <% if @project.previewtext.present? %>
           <%= @project.head %> – <%= @project.previewtext %>
       <% else %>
-          <%= project.head %>
+          <%= @project.head %>
       <% end %>
     </div>
     <div class="A_ProjectAuthors"><%= @project.author %></div>

@@ -5,5 +5,6 @@ $(document).ready(function() {
     e.preventDefault();
     $(".M_MenuBar").slideToggle();
     $(this).toggleClass("open");
+    console.log("Menu");
   });
 });
